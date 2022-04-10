@@ -1,0 +1,18 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.lanik.kursach.model">
+    <class name="Phone" table="phone">
+        <id name="id" column="phone_id">
+            <generator class="increment"/>
+        </id>
+        <property name="count"/>
+        <many-to-one name="shop" class="com.lanik.kursach.model.Shop"/>
+        <one-to-one name="company" class="com.lanik.kursach.model.Company"/>
+        <one-to-one name="os" class="com.lanik.kursach.model.Os"/>
+        <property name="productName"/>
+        <property name="diagonal"/>
+        <property name="price"/>
+    </class>
+</hibernate-mapping>
